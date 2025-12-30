@@ -33,10 +33,10 @@ public class PastesUIController {
     @PostMapping("/create")
     public String createPastes(Model model,@ModelAttribute Pastes pastes) {
       if(pastes.getContent()==null || pastes.getContent().isBlank()){
-          throw new PastesException();
+          throw new PastesException("pastes can't be empty");
       }
       if(pastes.getMaxViews()==null || pastes.getMaxViews()<1){
-          throw new PastesException();
+          throw new PastesException("view count must be greater than one");
       }
 
       pastes.setId(UUID.randomUUID().toString());
