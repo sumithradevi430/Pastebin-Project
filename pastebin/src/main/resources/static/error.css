@@ -1,0 +1,30 @@
+body {
+
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Segoe UI", sans-serif;
+}
+
+.error-box {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.error-box h2 {
+    color: #c0392b;
+    margin-bottom: 20px;
+}
+
+.error-box a {
+    text-decoration: none;
+    padding: 12px 24px;
+    background: #3498db;
+    color: white;
+    border-radius: 25px;
+    font-weight: 600;
+}

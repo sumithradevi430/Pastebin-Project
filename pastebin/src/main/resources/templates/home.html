@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>PasteBin</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+</head>
+<body>
+<div class="body">
+    <div>
+        <h1 class="head1">PasteBin </h1>
+    </div>
+<div>
+    <form method="post" th:action="@{/api/pastes/create}" th:object="${pastes}">
+        <textarea cols="10" rows="10" th:field="*{content}" placeholder="Paste your text here.."></textarea><br><br>
+
+        <input type="number" th:field="*{maxViews}" placeholder="Enter maximum views"><br><br>
+        <input type="submit" class="btn2" value="Generate paste link">
+    </form>
+</div>
+<div>
+    <table>
+        <tbody>
+        <tr th:each="pastes : ${allPastes}">
+            <td><a th:href="@{/api/pastes/view/{id}(id=${pastes.id})}" th:text="${pastes.id}"></a>
+                <button th:onclick="navigator.clipboard.writeText(window.location.origin + '/api/pastes/view/'+[[${pastes.id}]])" class="btn1">
+                    <i class="fa-regular fa-copy"></i>
+                </button>
+
+            </td>
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+</body>
+</html>

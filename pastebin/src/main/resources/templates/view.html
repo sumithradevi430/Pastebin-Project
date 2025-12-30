@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Pastebin</title>
+    <link rel="stylesheet" th:href="@{/view.css}">
+</head>
+<body>
+<h1 class="head2">Paste details</h1>
+<br>
+  <table cellpadding="50" cellspacing="10" border="2">
+      <tbody>
+      <tr>
+          <td>Content</td>
+          <td>Created At</td>
+          <td>Expires At</td>
+          <td>Maximum allowed views</td>
+          <td>View count</td>
+      </tr>
+      <tr>
+        <td th:text="${paste.content}"></td>
+          <td th:text="${#temporals.format(paste.createdAt, 'dd-MM-yyyy HH:mm')}"></td>
+          <td th:text="${#temporals.format(paste.expiresAt, 'dd-MM-yyyy HH:mm')}"></td>
+
+          <td th:text="${paste.maxViews}"></td>
+          <td th:text="${paste.viewCount}"></td>
+      </tr>
+      </tbody>
+  </table>
+<br>
+<a th:href="@{/api/pastes/create}">back</a>
+</body>
+</html>
