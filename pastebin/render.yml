@@ -8,10 +8,10 @@ services:
     dockerfilePath: ./Dockerfile
     envVars:
       - key: DB_URL
-        value: "jdbc:mysql://<your-server-host>:3306/pastebin_db?useSSL=false&serverTimezone=UTC"
+        value: "jdbc:postgresql://dpg-d5a8hfili9vc73b1mk2g-a.virginia-postgres.render.com:5432/pastebin_db_7ffx"
       - key: DB_USERNAME
-        value: "root"
+        value: "sumithra"
       - key: DB_PASSWORD
-        value: "1234"
+        value: "P0lo9y5GKHyd279v8Hlr7qc3BMEIBdzH"
       - key: PORT
-        value: "8080"
+        value: ""
