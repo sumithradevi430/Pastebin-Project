@@ -13,5 +13,3 @@ services:
         value: "sumithra"
       - key: DB_PASSWORD
         value: "P0lo9y5GKHyd279v8Hlr7qc3BMEIBdzH"
-      - key: PORT
-        value: ""
